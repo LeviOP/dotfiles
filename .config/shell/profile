@@ -16,6 +16,10 @@ export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/history"
 export NODE_REPL_HISTORY="${XDG_DATA_HOME:-$HOME/.local/share}/node/history"
 export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npm/npmrc"
+export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
+export RUSTUP_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/rustup"
+export PYTHONSTARTUP="${XDG_CONFIG_HOME:-$HOME/.config}/python/pythonstartup"
+export PIP_TARGET="${XDG_DATA_HOME:-$HOME/.local/share}/pip"
 export _Z_DATA="${XDG_DATA_HOME:-$HOME/.local/share}/z/z"
 export PKG_CACHE_PATH="${XDG_CACHE_HOME:-$HOME/.cache}/pkg"
 export LESSHISTFILE="-"
@@ -30,4 +34,4 @@ export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/npm/bin:$PATH"
 source "${XDG_CONFIG_HOME:-$HOME/.config}/lf/icons"
 
 # zsh-vi-mode config
-ZVM_CURSOR_STYLE_ENABLED=false
+export ZVM_CURSOR_STYLE_ENABLED=false
