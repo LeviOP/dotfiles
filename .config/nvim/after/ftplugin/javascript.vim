@@ -1,0 +1,2 @@
+echomsg "test"
+setlocal comments-=://

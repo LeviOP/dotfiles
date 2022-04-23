@@ -1,0 +1,33 @@
+#!/bin/zsh
+
+# Profile file. Runs on login. Environmental variables are set here.
+
+# Adds `~/.local/bin` to $PATH
+# export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
+
+# Default programs:
+export EDITOR="nvim"
+
+# ~/ Clean-up:
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
+export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/history"
+export NODE_REPL_HISTORY="${XDG_DATA_HOME:-$HOME/.local/share}/node/history"
+export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npm/npmrc"
+export _Z_DATA="${XDG_DATA_HOME:-$HOME/.local/share}/z/z"
+export PKG_CACHE_PATH="${XDG_CACHE_HOME:-$HOME/.cache}/pkg"
+export LESSHISTFILE="-"
+
+# Initialize enviroments
+eval $(/Users/3093357/.homebrew/bin/brew shellenv)
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+eval "$(fnm env --use-on-cd)"
+export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/npm/bin:$PATH"
+
+# lf icons
+source "${XDG_CONFIG_HOME:-$HOME/.config}/lf/icons"
+
+# zsh-vi-mode config
+ZVM_CURSOR_STYLE_ENABLED=false
