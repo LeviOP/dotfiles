@@ -1,2 +1,1 @@
-echomsg "test"
 setlocal comments-=://
