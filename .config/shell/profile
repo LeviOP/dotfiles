@@ -34,4 +34,7 @@ export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/npm/bin:$PATH"
 source "${XDG_CONFIG_HOME:-$HOME/.config}/lf/icons"
 
 # zsh-vi-mode config
-export ZVM_CURSOR_STYLE_ENABLED=false
+ZVM_CURSOR_STYLE_ENABLED=false
+
+# zsh builtins help
+export HELPDIR='/usr/share/zsh/5.8/help'
