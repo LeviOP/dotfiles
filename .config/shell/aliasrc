@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Use neovim if present
+[ -x "$(command -v nvim)" ] && alias vim="nvim"
+
+# Use exa if present
+[ -x "$(command -v exa)" ] && alias \
+    l='exa --icons' \
+    la='exa -a --icons' \ #ll='exa -lah --icons' \
+    lla='exa -lah --icons' \
+    ls='exa --color=auto --icons'
+
+# Enable zsh bulitins help
+unalias run-help
+autoload run-help
+alias help=run-help

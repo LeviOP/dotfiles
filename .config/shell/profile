@@ -1,0 +1,52 @@
+#!/bin/zsh
+
+# Profile file. Runs on login. Environmental variables are set here.
+
+# Adds `~/.local/bin` to $PATH
+export PATH="$PATH:$HOME/.local/bin"
+
+# Default programs:
+export EDITOR="nvim"
+export BROWSER="$HOME/Desktop/Waterfox.app/Contents/MacOS/waterfox"
+
+# ZSH:
+export HISTSIZE=10000000
+export SAVEHIST=10000000
+
+# ~/ Clean-up:
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
+export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/history"
+export NODE_REPL_HISTORY="${XDG_DATA_HOME:-$HOME/.local/share}/node/history"
+export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npm/npmrc"
+export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
+export RUSTUP_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/rustup"
+export PYTHONSTARTUP="${XDG_CONFIG_HOME:-$HOME/.config}/python/pythonstartup"
+export PIP_TARGET="${XDG_DATA_HOME:-$HOME/.local/share}/pip"
+export _Z_DATA="${XDG_DATA_HOME:-$HOME/.local/share}/z/z"
+export PKG_CACHE_PATH="${XDG_CACHE_HOME:-$HOME/.cache}/pkg"
+export LESSHISTFILE="-"
+alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
+export GRADLE_USER_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/gradle"
+
+# Initialize enviroments
+eval $($HOME/.local/homebrew/bin/brew shellenv)
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+eval "$(fnm env --use-on-cd)"
+export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/npm/bin:$PATH"
+export PATH="$HOME/.local/homebrew/opt/openjdk/bin:$PATH"
+
+# lf icons
+source "${XDG_CONFIG_HOME:-$HOME/.config}/lf/icons"
+
+# zsh-vi-mode config
+export ZVM_CURSOR_STYLE_ENABLED=false
+
+# zsh builtins help
+export HELPDIR='/usr/share/zsh/5.8/help'
+
+# less config. enable mouse and enable escape sequences
+export LESS="--mouse --wheel-lines=3 -R"
