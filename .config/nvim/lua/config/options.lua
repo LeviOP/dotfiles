@@ -8,7 +8,7 @@ vim.o.shiftwidth = 4
 vim.o.smarttab = true
 vim.o.tabstop = 4
 vim.o.list = true
-vim.o.listchars = "tab:▸\\ ,trail:·"
+vim.o.listchars = "tab:▸ ,trail:·"
 
 -- Search
 vim.o.ignorecase = true
@@ -25,6 +25,7 @@ vim.o.laststatus = 2
 vim.o.ruler = true
 vim.o.wildmenu = true
 vim.o.number = true
+vim.o.relativenumber = true
 vim.o.mouse = "a"
 vim.o.title = true
 vim.o.background = "dark"

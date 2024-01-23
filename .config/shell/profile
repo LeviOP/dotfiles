@@ -31,6 +31,10 @@ export PKG_CACHE_PATH="${XDG_CACHE_HOME:-$HOME/.cache}/pkg"
 export LESSHISTFILE="-"
 alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 export GRADLE_USER_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/gradle"
+export VIMINIT='let $MYVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/vimrc" : "$XDG_CONFIG_HOME/nvim/init.lua" | so $MYVIMRC'
+export WAKATIME_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/wakatime"
+export PNPM_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/pnpm"
+export SQLITE_HISTORY="${XDG_DATA_HOME:-$HOME/.local/share}/sqlite_history"
 
 # Initialize enviroments
 eval $($HOME/.local/homebrew/bin/brew shellenv)
@@ -38,6 +42,7 @@ FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 eval "$(fnm env --use-on-cd)"
 export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/npm/bin:$PATH"
 export PATH="$HOME/.local/homebrew/opt/openjdk/bin:$PATH"
+export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/pnpm:$PATH"
 
 # lf icons
 source "${XDG_CONFIG_HOME:-$HOME/.config}/lf/icons"
