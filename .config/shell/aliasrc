@@ -3,14 +3,16 @@
 # Use neovim if present
 [ -x "$(command -v nvim)" ] && alias vim="nvim"
 
-# Use exa if present
-[ -x "$(command -v exa)" ] && alias \
-    l='exa --icons' \
-    la='exa -a --icons' \ #ll='exa -lah --icons' \
-    lla='exa -lah --icons' \
-    ls='exa --color=auto --icons'
+# Use eza if present
+[ -x "$(command -v eza)" ] && alias \
+    l='eza --icons' \
+    la='eza -a --icons' \
+    ll='eza -lah --icons' \
+    lla='eza -lah --icons' \
+    ls='eza --color=auto --icons'
 
-# Enable zsh bulitins help
-unalias run-help
-autoload run-help
-alias help=run-help
+# # Enable zsh bulitins help
+# unalias run-help
+# autoload run-help
+# alias help=run-help
+# THIS IS ALREADY DONE ON ARCH LINUX

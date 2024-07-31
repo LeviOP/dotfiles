@@ -20,6 +20,7 @@ return {
                 },
                 jsonls = {},
                 vimls = {},
+                gopls = {},
                 rust_analyzer = {
                     settings = {
                         procMacro = {
@@ -35,7 +36,10 @@ return {
                         })
                     end
                 },
-                clangd = {}
+                clangd = {
+                    filetypes = { "c", "cpp", "objc", "objcpp", "cuda" }
+                },
+                bufls = {}
             },
             setup = {
                 jsonls = function()

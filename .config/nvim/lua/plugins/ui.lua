@@ -3,7 +3,20 @@ return {
     {
         "akinsho/bufferline.nvim",
         dependencies = "nvim-tree/nvim-web-devicons",
-        config = true
+        -- temp fix for some transparent background stuff :P
+        opts = {
+            highlights = {
+                buffer_selected = {
+                    bg = "#16161e"
+                },
+                buffer_visible = {
+                    bg = "#121212"
+                },
+                background = {
+                    bg = "#121212"
+                }
+            }
+        }
     },
     {
         "nvim-lualine/lualine.nvim",

@@ -7,7 +7,7 @@ export PATH="$PATH:$HOME/.local/bin"
 
 # Default programs:
 export EDITOR="nvim"
-export BROWSER="$HOME/Desktop/Waterfox.app/Contents/MacOS/waterfox"
+export BROWSER="firefox"
 
 # Man:
 export MANPAGER="nvim +Man!"
@@ -17,11 +17,6 @@ export HISTSIZE=10000000
 export SAVEHIST=10000000
 
 # ~/ Clean-up:
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_STATE_HOME="$HOME/.local/state"
-export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/history"
 export NODE_REPL_HISTORY="${XDG_DATA_HOME:-$HOME/.local/share}/node/history"
 export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npm/npmrc"
@@ -40,13 +35,24 @@ export PNPM_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/pnpm"
 export SQLITE_HISTORY="${XDG_DATA_HOME:-$HOME/.local/share}/sqlite_history"
 export GTK2_RC_FILES="${XDG_DATA_HOME:-$HOME/.local/share}/gtk-2.0/gtkrc":"${XDG_DATA_HOME:-$HOME/.local/share}/gtk-2.0/gtkrc.mine"
 export CUDA_CACHE_PATH="${XDG_CACHE_HOME:-$HOME/.cache}/nv"
+export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
+export GOPATH="$XDG_DATA_HOME"/go
+export GOMODCACHE="$XDG_CACHE_HOME"/go/mod
 
 # Initialize enviroments
-export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/fnm:$PATH"
+command -v fnm &&
+export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/fnm:$PATH" &&
 eval "$(fnm env --use-on-cd)"
 export PATH="$PNPM_HOME:$PATH"
 export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/npm/bin:$PATH"
 # export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/pnpm:$PATH"
+
+export PATH="$XDG_DATA_HOME/go/bin:$PATH"
+
+# dark mode
+export GTK_THEME=Adwaita:dark
+export GTK2_RC_FILES=/usr/share/themes/Adwaita-dark/gtk-2.0/gtkrc
+export QT_STYLE_OVERRIDE=Adwaita-Dark
 
 # zsh-vi-mode config
 export ZVM_CURSOR_STYLE_ENABLED=false
