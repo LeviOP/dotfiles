@@ -1,0 +1,11 @@
+[Default Applications]
+inode/directory=alacritty-open.desktop
+image/x-nikon-nef=qimgv.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/discord-378412193567473674=discord-378412193567473674.desktop
+
+[Added Associations]
+image/x-nikon-nef=org.geeqie.Geeqie.desktop;feh.desktop;qimgv.desktop;
+video/x-matroska=vlc.desktop;
+video/mp4=vlc.desktop;

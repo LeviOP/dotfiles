@@ -1,0 +1,65 @@
+/**
+* @name Tokyonight (night)
+* @author LeviOP
+* @version 1.0.0
+* @description Base24 theme for vesktop
+**/
+
+:root {
+    --base00: #1a1b26; /* Background */
+    --base01: #24283b; /* Black (brighter background) */
+    --base02: #292e42; /* Bright black (Selection background) */
+    --base03: #565f89; /* Grey (comments) */
+    --base04: #9aa5ce; /* Dark foreground */
+    --base05: #a9b1d6; /* Foreground */
+    --base06: #c0caf5; /* Light foreground */
+    --base07: #7dcfff; /* The lightest foreground */
+    --base08: #f7768e; /* Red */
+    --base09: #ff9e64; /* Orange */
+    --base0A: #e0af68; /* Yellow */
+    --base0B: #9ece6a; /* Green */
+    --base0C: #7dcfff; /* Cyan */
+    --base0D: #7aa2f7; /* Blue */
+    --base0E: #bb9af7; /* Purple */
+    --base0F: #db4b4b; /* Magenta */
+    --base10: #16161e;
+    --base11: #121116;
+
+    --primary-630: var(--base00); /* Autocomplete background */
+    --primary-660: var(--base00); /* Search input background */
+}
+
+.theme-light, .theme-dark {
+    --search-popout-option-fade: none; /* Disable fade for search popout */
+    /* --bg-overlay-2: var(--base11); enabling this line just made shit look bad. */
+    --home-background: var(--base00);
+    --background-primary: var(--base00);
+    --background-secondary: var(--base10);
+    --background-secondary-alt: color-mix(in oklab, var(--base10) 50%, var(--base11) 50%);
+    --channeltextarea-background: var(--base01);
+    --background-tertiary: var(--base11);
+    --background-accent: var(--base0E);
+    --background-floating: var(--base01);
+    /* --background-modifier-hover: color-mix(in oklab, var(--base10) 70%, transparent, 30%); */
+    --background-modifier-hover: var(--base02);
+    --background-modifier-selected: var(--base02);
+    --text-normal: var(--base05);
+    --text-secondary: var(--base04);
+    --text-muted: var(--base04);
+    --text-link: var(--base0C);
+    --interactive-normal: var(--base05);
+    --interactive-hover: var(--base05);
+    --interactive-active: var(--base06);
+    --interactive-muted: var(--base03);
+    --channels-default: var(--base04);
+    --channel-icon: var(--base04);
+    --header-primary: var(--base06);
+    --header-secondary: var(--base04);
+    --modal-background: var(--base00);
+    --scrollbar-thin-track: transparent;
+    --scrollbar-auto-track: transparent;
+}
+
+.highlight {
+    background: var(--base02);
+}
