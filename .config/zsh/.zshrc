@@ -6,7 +6,7 @@ if [[ "$REAL_TERM" == "linux" ]]; then
     PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 else
     source ~/.config/p10k/p10k.zsh
-    source ~/.local/share/powerlevel10k/powerlevel10k.zsh-theme
+    source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 fi
 
 # Use emacs binds

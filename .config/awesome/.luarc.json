@@ -8,6 +8,6 @@
         "mouse"
     ],
     "workspace.library": [
-        "/usr/share/awesome"
+        "/usr/share/awesome/lib"
     ]
 }

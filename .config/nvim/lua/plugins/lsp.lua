@@ -1,13 +1,16 @@
 ---@type LazySpec
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 return {
     {
         "neovim/nvim-lspconfig",
         dependencies = {
-            { "folke/neodev.nvim", config = true }
+            { "folke/lazydev.nvim", config = true }
         },
         opts = {
             servers = {
-                tsserver = {},
+                -- ts_ls = {},
+                vtsls = {},
                 svelte = {},
                 lua_ls = {
                     settings = {
@@ -18,7 +21,21 @@ return {
                         }
                     }
                 },
-                jsonls = {},
+                jsonls = {
+                    capabilities = capabilities,
+                    settings = {
+                        json = {
+                            schemas = require("schemastore").json.schemas(),
+                            validate = { enable = true }
+                        }
+                    }
+                },
+                html = {
+                    capabilities = capabilities
+                },
+                cssls = {
+                    capabilities = capabilities
+                },
                 vimls = {},
                 gopls = {},
                 rust_analyzer = {
@@ -36,27 +53,13 @@ return {
                         })
                     end
                 },
-                clangd = {
-                    filetypes = { "c", "cpp", "objc", "objcpp", "cuda" }
-                },
-                bufls = {}
+                -- clangd = {
+                --     filetypes = { "c", "cpp", "objc", "objcpp", "cuda" }
+                -- },
+                bufls = {},
+                ccls = {},
             },
-            setup = {
-                jsonls = function()
-                    local capabilities = vim.lsp.protocol.make_client_capabilities()
-                    capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-                    require("lspconfig").jsonls.setup({
-                        capabilities = capabilities,
-                        settings = {
-                            json = {
-                                schemas = require("schemastore").json.schemas(),
-                                validate = { enable = true }
-                            }
-                        }
-                    })
-                end
-            }
+            setup = {}
         },
         config = function (_, opts)
             local lspconfig = require("lspconfig")
