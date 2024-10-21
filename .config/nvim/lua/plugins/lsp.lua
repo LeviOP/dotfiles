@@ -53,11 +53,10 @@ return {
                         })
                     end
                 },
-                -- clangd = {
-                --     filetypes = { "c", "cpp", "objc", "objcpp", "cuda" }
-                -- },
-                bufls = {},
-                ccls = {},
+                clangd = {
+                    filetypes = { "c", "cpp", "objc", "objcpp", "cuda" }
+                },
+                bufls = {}
             },
             setup = {}
         },

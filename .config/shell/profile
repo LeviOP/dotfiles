@@ -45,6 +45,7 @@ export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/fnm:$PATH" &&
 eval "$(fnm env --use-on-cd)"
 export PATH="$PNPM_HOME:$PATH"
 export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/npm/bin:$PATH"
+eval "$(luarocks path)"
 # export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/pnpm:$PATH"
 
 export PATH="$XDG_DATA_HOME/go/bin:$PATH"
