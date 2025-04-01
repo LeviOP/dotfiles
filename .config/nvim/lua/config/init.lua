@@ -1,4 +1,4 @@
-vim.cmd.colorscheme "tokyonight"
+vim.cmd.colorscheme "tokyonight-night"
 
 require("config.lsp")
 require("config.options")
